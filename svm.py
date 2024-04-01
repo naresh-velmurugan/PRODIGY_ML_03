@@ -23,14 +23,13 @@ def load_images_and_labels(folder):
     return images, labels
 
 def create_features(img):
-    """Create HOG features for an image."""
     resized_img = resize(img, (128, 64))  # Resize image to uniform size
     # Extract HOG features
     features = hog(resized_img, orientations=8, pixels_per_cell=(16, 16),
                    cells_per_block=(1, 1), channel_axis=-1)
     return features
 
-train_folder = r"C:\Users\nares\PycharmProjects\SVM\.venv\dogs-vs-cats\train\train" #Here add the path for your train dataset folder
+train_folder = r"C:\Users\nares\PycharmProjects\SVM\.venv\dogs-vs-cats\train\train" #Here add the path for your trainning dataset folder
 test_folder = r"C:\Users\nares\PycharmProjects\SVM\.venv\dogs-vs-cats\test1\test1" #Here add the path for your test dataset folder
 
 train_images, train_labels = load_images_and_labels(train_folder)
@@ -51,3 +50,5 @@ clf.fit(train_features_scaled, train_labels)
 predictions = clf.predict(test_features_scaled)
 accuracy = accuracy_score(test_labels, predictions)
 print(f"Test Accuracy: {accuracy * 100:.2f}%")
+
+#Use a dataset containing the images of cat and dogs with file name specified as cat_01.png,dog_01.png
