@@ -30,8 +30,8 @@ def create_features(img):
                    cells_per_block=(1, 1), channel_axis=-1)
     return features
 
-train_folder = r"C:\Users\nares\PycharmProjects\SVM\.venv\dogs-vs-cats\train\train"
-test_folder = r"C:\Users\nares\PycharmProjects\SVM\.venv\dogs-vs-cats\test1\test1"
+train_folder = r"C:\Users\nares\PycharmProjects\SVM\.venv\dogs-vs-cats\train\train" #Here add the path for your train dataset folder
+test_folder = r"C:\Users\nares\PycharmProjects\SVM\.venv\dogs-vs-cats\test1\test1" #Here add the path for your test dataset folder
 
 train_images, train_labels = load_images_and_labels(train_folder)
 test_images, test_labels = load_images_and_labels(test_folder)
